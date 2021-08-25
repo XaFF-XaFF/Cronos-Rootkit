@@ -19,8 +19,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Inf Include="CronosRootkit.inf">
-      <Filter>Driver Files</Filter>
-    </Inf>
+    <ClInclude Include="Driver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
