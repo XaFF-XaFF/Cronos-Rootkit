@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cronos Rootkit", "Cronos Rootkit\Cronos Rootkit.vcxproj", "{05B4EB7F-3D59-4E6A-A7BC-7C1241578CA7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CronosDebugger", "CronosDebugger\CronosDebugger.vcxproj", "{940B1177-2B8C-48A2-A8E7-BF4E8E80C60F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -41,6 +43,18 @@ Global
 		{05B4EB7F-3D59-4E6A-A7BC-7C1241578CA7}.Release|x86.ActiveCfg = Release|Win32
 		{05B4EB7F-3D59-4E6A-A7BC-7C1241578CA7}.Release|x86.Build.0 = Release|Win32
 		{05B4EB7F-3D59-4E6A-A7BC-7C1241578CA7}.Release|x86.Deploy.0 = Release|Win32
+		{940B1177-2B8C-48A2-A8E7-BF4E8E80C60F}.Debug|ARM.ActiveCfg = Debug|Win32
+		{940B1177-2B8C-48A2-A8E7-BF4E8E80C60F}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{940B1177-2B8C-48A2-A8E7-BF4E8E80C60F}.Debug|x64.ActiveCfg = Debug|x64
+		{940B1177-2B8C-48A2-A8E7-BF4E8E80C60F}.Debug|x64.Build.0 = Debug|x64
+		{940B1177-2B8C-48A2-A8E7-BF4E8E80C60F}.Debug|x86.ActiveCfg = Debug|Win32
+		{940B1177-2B8C-48A2-A8E7-BF4E8E80C60F}.Debug|x86.Build.0 = Debug|Win32
+		{940B1177-2B8C-48A2-A8E7-BF4E8E80C60F}.Release|ARM.ActiveCfg = Release|Win32
+		{940B1177-2B8C-48A2-A8E7-BF4E8E80C60F}.Release|ARM64.ActiveCfg = Release|Win32
+		{940B1177-2B8C-48A2-A8E7-BF4E8E80C60F}.Release|x64.ActiveCfg = Release|x64
+		{940B1177-2B8C-48A2-A8E7-BF4E8E80C60F}.Release|x64.Build.0 = Release|x64
+		{940B1177-2B8C-48A2-A8E7-BF4E8E80C60F}.Release|x86.ActiveCfg = Release|Win32
+		{940B1177-2B8C-48A2-A8E7-BF4E8E80C60F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
