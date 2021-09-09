@@ -25,6 +25,9 @@ VOID HideDriver(PDRIVER_OBJECT DriverObject)
 	KdPrint(("[!] Driver hidden!\n"));
 }
 
+////
+//		BSOD AVOID USED FROM UNKNOWNCHEATS
+////
 VOID RemoveTheLinks(PLIST_ENTRY Current)
 {
 	PLIST_ENTRY Previous, Next;
