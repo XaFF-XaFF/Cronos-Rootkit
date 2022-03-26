@@ -19,10 +19,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Driver.h">
+    <ClInclude Include="Rootkit.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Rootkit.h">
+    <ClInclude Include="Dispatcher.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -30,10 +33,10 @@
     <ClCompile Include="Driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Ghost.cpp">
+    <ClCompile Include="Rootkit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Rootkit.cpp">
+    <ClCompile Include="Dispatcher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
